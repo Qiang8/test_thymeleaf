@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+<script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+			table{
+		width: 50%;
+		text-align: center;
+		border-collapse: collapse;
+		}
+	td{
+			border:1px solid grey;
+		}
+</style>
+</head>
+<body>
+<a href="/TestController/register">添加</a>
+
+ <table >
+	 <thead>
+	 	<tr>
+	 	<td>姓名</td>
+	 	<td>编号</td>
+	 	<td>地址</td>
+	 	<td>性别</td>
+	 	<td>操作</td>
+	 	</tr>
+	 </thead>
+	 <tbody>
+		<tr th:each="Person:${pList}">
+		 <td th:text="${Person.name}"></td>
+		 <td th:text="${Person.id}"></td>
+		 <td th:text="${Person.address}"></td>
+		 <td th:text="${Person.sex}"></td>
+		 <td><a href="/TestController/update?id=${Person.id}">编辑</a></td>
+		</tr>
+	 </tbody>
+ </table>
+</body>
+</html>

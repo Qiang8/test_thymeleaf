@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/TestController/save" >
+	姓名<input id="name" name="name" type="text" value="${person.getName()}"/><br/>
+	编号<input id="id" name="id" type="text" value="${person.getId()}"/><br/>
+	地址<input id="address" name="address" type="text" value="${person.getAddress()}"/><br/>
+	性别<input type="radio" th:field="*{sex}" value="男" th:value="${person.getSex}"/>
+	<input type="radio" th:field="*{sex}" value="女" th:value="${person.getSex}"/><br/>
+	<input name="save" type="submit" value="保存"/>
+	</form>
+
+</body>
+</html>
